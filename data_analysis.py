@@ -89,8 +89,8 @@ if __name__ == '__main__' :
     st.write("选择的自相关性分析对象为：", type_acf)
     lags = st.sidebar.number_input("请输入自相关性的阶数：", min_value=1, max_value=200, value=30, step=1)
     st.write("选择的自相关性阶数为：", lags)
-    data_acf = acf(scada_data[type_acf], unbiased=False, nlags=lags, qstat=False, fft=None, alpha=None, missing='none')
-    st.write("自相关性系数：", data_acf)
+#     data_acf = acf(scada_data[type_acf], unbiased=False, nlags=lags, qstat=False, fft=None, alpha=None, missing='none')
+#     st.write("自相关性系数：", data_acf)
     plot_acf(scada_data[type_acf])
     st.pyplot()
 
