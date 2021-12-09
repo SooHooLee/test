@@ -6,6 +6,8 @@ import warnings
 warnings.filterwarnings("ignore")
 import streamlit as st
 from windrose import WindroseAxes
+from statsmodels.tsa.stattools import acf
+from statsmodels.graphics.tsaplots import plot_acf
 warnings.filterwarnings("ignore")
 plt.rcParams['font.sans-serif'] = ['SimHei'] #正常显示中文标签
 plt.rcParams['axes.unicode_minus'] = False #正常显示负号
@@ -76,8 +78,7 @@ if __name__ == '__main__' :
     # 自相关性acf
     st.sidebar.subheader(" (2) 自相关性")
     st.subheader(" (2) 自相关性")
-    from statsmodels.tsa.stattools import acf
-    from statsmodels.graphics.tsaplots import plot_acf
+ 
 
     type_acf = st.sidebar.selectbox('请选择自相关性分析对象：',
                                     (
